@@ -37,14 +37,16 @@ class MyController extends Controller
       $des = Request::get('desc');
       $add = Request::get('addr');
       $img = Request::get('img');
+      $long = Request::get('longitude');
+      $lati = Request::get('latitude');
       if($name && $des && $add && $img){
         return MyModel::create([
           'name'=>$name,
           'description'=>$des,
           'address'=>$add,
           'image'=>$img,
-          'longitude'=>"09909",
-          'latitude'=>"989898",
+          'longitude'=>$long,
+          'latitude'=>$lati,
         ]);
       }
       else {
