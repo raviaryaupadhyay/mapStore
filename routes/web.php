@@ -16,7 +16,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('/store', 'MyController@myFunc');
-Route::get('/addStore','MyController@myInsert');
-Route::get('/updateStore','MyController@myUpdate');
-Route::get('/deleteStore','MyController@myDelete');
+Route::get('/store', 'MyController@myFunc')->middleware('auth');
+Route::get('/addStore','MyController@myInsert')->middleware('auth');
+Route::get('/updateStore','MyController@myUpdate')->middleware('auth');
+Route::get('/deleteStore','MyController@myDelete')->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
