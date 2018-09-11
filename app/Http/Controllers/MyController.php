@@ -20,7 +20,7 @@ class MyController extends Controller
           $a=$x-$longitude;
           $b=$y-$latitude;
           $curRadius=sqrt(pow($a,2)+pow($b,2));
-          if(True)
+          if($curRadius<100000)
           {
             //dd($data);
             $newArr=array(MyModel::where('id',$value['id'])->get());
